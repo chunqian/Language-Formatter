@@ -1,0 +1,63 @@
+[
+{
+    "caption": "Preferences",
+    "id": "preferences",
+    "children": [
+    {
+        "caption": "Package Settings",
+        "id": "package-settings",
+        "children": [
+        {
+            "caption": "Language Formatter",
+            "children": [
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/clang.cfg"
+                },
+                "caption": "clang.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/js-beautify.cfg"
+                },
+                "caption": "js-beautify.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/json.cfg"
+                },
+                "caption": "json.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/lua.cfg"
+                },
+                "caption": "lua.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/sublime.cfg"
+                },
+                "caption": "sublime.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language Formatter/config/yapf.cfg"
+                },
+                "caption": "yapf.cfg"
+            }]
+        }]
+    }]
+}]
