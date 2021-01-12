@@ -1,0 +1,5 @@
+[
+{
+    "keys": ["command+ctrl+l"],
+    "command": "language_format"
+}]
