@@ -10,6 +10,11 @@ def fread(filepath):
         return f.read()
 
 
+def freadlines(filepath):
+    with open(filepath, 'r') as f:
+        return f.read().splitlines()
+
+
 class LanguageFormatCommand(sublime_plugin.TextCommand):
     def run(self, edit, error=True, save=True):
         syntax = self.view.settings().get('syntax')
@@ -116,12 +121,26 @@ class LanguageFormatCommand(sublime_plugin.TextCommand):
             self.process(edit, cmd, contents)
             return
 
+        languages = ['Vue', 'Vue Component']
+        if any((syntax.endswith((l + '.tmLanguage', l + '.sublime-syntax')) for l in languages)):
+            # run prettier
+            package_path = os.path.split(os.path.dirname(__file__))[1]
+            style_path = os.path.join(sublime.packages_path(), package_path, "config", "vue.cfg")
+            styles = freadlines(style_path)
+            executable_path = os.path.join('prettier')
+            contents = self.view.substr(sublime.Region(0, self.view.size()))
+            cmd = [executable_path]
+            for i in styles:
+                cmd.append(i)
+            self.process(edit, cmd, contents)
+            return
+
     def process(self, edit, cmd: list, contents: str):
         if len(cmd) == 0:
             sublime.error_message("Not Support.")
             return
 
-        print(cmd)
+        # print(cmd)
         process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         process.stdin.write(str.encode(contents))
         process.stdin.close()
