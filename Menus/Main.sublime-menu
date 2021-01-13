@@ -65,6 +65,14 @@
                     "file": "${packages}/Language-Formatter/config/yapf.cfg"
                 },
                 "caption": "yapf.cfg"
+            },
+            {
+                "command": "open_file",
+                "args":
+                {
+                    "file": "${packages}/Language-Formatter/config/vue.cfg"
+                },
+                "caption": "vue.cfg"
             }]
         }]
     }]
