@@ -1,6 +1,6 @@
 # LanguageFormatter
 
-Sublime Text 3 plugin for [LanguageFormatter]().
+Sublime Text 3 plugin, generic code format tool.
 
 ### Dependency
 
